@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>لوحة تعديل موقع اوريفيو</title>
-  <link rel="icon" href="images/icon.png">
-  <link rel="stylesheet" href="css/admin.css">
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="admin.css">
+  <script src="auth.js"></script>
+  <script src="gate.js"></script>
 </head>
 <body>
   <header class="bar">
     <div class="bar-title">
-      <img src="images/icon.png" alt="">
+      <img src="icon.png" alt="">
       <b>لوحة التعديل</b>
     </div>
     <div class="bar-actions">
@@ -36,15 +38,15 @@
     <h2>الملفات اتحمّلت ✅</h2>
     <ol>
       <li>فكّ ضغط <b>aurevo-update.zip</b>.</li>
-      <li>هتلاقي فولدر <b>data</b> (فيه <b>content.js</b> الجديد) وفولدر <b>images/uploads</b> (الصور اللي رفعتها).</li>
+      <li>هتلاقي ملف <b>content.js</b> الجديد، والصور اللي رفعتها (أسماؤها بتبدأ بـ <b>u-</b>).</li>
       <li>على GitHub: افتح الـ Repository واضغط <b>Add file ← Upload files</b>.</li>
-      <li>اسحب الفولدرين، واضغط <b>Commit changes</b>.</li>
+      <li>اختار كل الملفات دي (content.js والصور)، واضغط <b>Commit changes</b>.</li>
       <li>بعد دقيقة الموقع يتحدّث.</li>
     </ol>
     <button class="b b-wine" id="closeDone" type="button">تمام</button>
   </dialog>
 
-  <script src="data/content.js"></script>
-  <script src="js/admin.js"></script>
+  <script src="content.js"></script>
+  <script src="admin.js"></script>
 </body>
 </html>

@@ -10,10 +10,10 @@
   <meta property="og:description" content="نبني براندك ونحوّل متابعينك لعملاء. سوشيال ميديا، إعلانات، فيديو وهوية بصرية.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ar_EG">
-  <link rel="icon" href="images/icon.png">
-  <link rel="preload" href="fonts/thmanyahsans-Bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/thmanyahsans-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="icon.png">
+  <link rel="preload" href="thmanyahsans-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="thmanyahsans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <a class="skip" href="#main">تخطّي للمحتوى</a>
@@ -38,7 +38,15 @@
 
   <noscript><p style="padding:2rem;text-align:center">الموقع محتاج JavaScript علشان يتعرض صح.</p></noscript>
 
-  <script src="data/content.js"></script>
-  <script src="js/main.js"></script>
+  <script>
+    /* لو في ملف ماتحمّلش أو في خطأ، بيظهر السبب بدل صفحة بيضا */
+    window.addEventListener("error", function (e) {
+      var m = document.getElementById("main"); if (!m || m.querySelector("h1")) return;
+      var what = e.target && (e.target.src || e.target.href) ? "الملف ده ماتحمّلش: " + (e.target.src || e.target.href) : "خطأ: " + e.message;
+      m.innerHTML = '<div style="padding:48px 20px;max-width:640px;margin:auto;font:17px/1.9 Tahoma,Arial,sans-serif;color:#6b0f26"><b>الموقع مش قادر يتحمّل.</b><br>' + what.replace(/</g, "&lt;") + "<br><small>اتأكد إن كل الملفات (style.css و main.js و content.js والخطوط والصور) مرفوعة جنب index.html في نفس المستوى.</small></div>";
+    }, true);
+  </script>
+  <script src="content.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
